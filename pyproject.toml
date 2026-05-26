@@ -9,6 +9,7 @@ dependencies = [
     "matplotlib>=3.10.9",
     "networkx>=3.6.1",
     "numpy>=2.4.6",
+    "pyarrow>=24.0.0",
     "scipy>=1.17.1",
     "xover>=2.0.0",
 ]
