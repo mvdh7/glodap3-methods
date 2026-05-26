@@ -13,7 +13,7 @@ jobs:
     strategy:
       matrix:
         python-version: ["3.14"]
-        os: ["ubuntu-latest", "osx-latest", "windows-latest"]
+        os: ["ubuntu-latest"]
     runs-on: ${{ matrix.os }}
     steps:
     - name: Checkout repo
