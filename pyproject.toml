@@ -1,0 +1,22 @@
+[project]
+name = "glodap3-methods"
+version = "0.1.0"
+description = "Analysis and figures accompanying the GLODAPv3 methods paper"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "ipykernel>=7.2.0",
+    "matplotlib>=3.10.9",
+    "networkx>=3.6.1",
+    "numpy>=2.4.6",
+    "scipy>=1.17.1",
+    "xover>=2.0.0",
+]
+
+[tool.ruff]
+line-length = 79
+
+[tool.ruff.lint.isort]
+combine-as-imports = true
+force-single-line = false
+lines-after-imports = 2
