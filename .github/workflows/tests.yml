@@ -9,7 +9,7 @@ on:
       - data/**
 jobs:
   build:
-    name: Build package and run tests
+    name: Create figures
     strategy:
       matrix:
         python-version: ["3.14"]
@@ -23,8 +23,8 @@ jobs:
         curl -fsSL https://pixi.sh/install.sh | sh
         export PATH="$HOME/.pixi/bin:$PATH"
         pixi install
-        pixi run fig01_trends.py
-        pixi run fig02_regional_clusters.py
-        pixi run fig03_network.py
-        pixi run fig04_ff_vs_wlsq.py
+        pixi run python fig01_trends.py
+        pixi run python fig02_regional_clusters.py
+        pixi run python fig03_network.py
+        pixi run python fig04_ff_vs_wlsq.py
         
