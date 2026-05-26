@@ -1,0 +1,16 @@
+{
+    "description": "", 
+    "license": "GPL-3.0-only", 
+    "title": "Analysis and figures accompanying the GLODAPv3 methods paper (mvdh7/glodap3-methods)", 
+    "creators": [
+        {
+            "affiliation": "NIOZ Royal Netherlands Institute for Sea Research, Texel, the Netherlands", 
+            "name": "Humphreys, Matthew P.",
+            "orcid": "0000-0002-9371-7128"
+        },
+        {
+            "affiliation": "NORCE Research AS, Bjerknes Centre for Climate Research, Bergen, Norway", 
+            "name": "Lange, Nico"
+        }
+    ]
+}
