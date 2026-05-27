@@ -1,6 +1,6 @@
 [project]
 name = "glodap3-methods"
-version = "0.1.0"
+version = "0.2"
 description = "Analysis and figures accompanying the GLODAPv3 methods paper"
 readme = "README.md"
 requires-python = ">=3.14"
