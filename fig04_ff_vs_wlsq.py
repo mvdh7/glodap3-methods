@@ -4,6 +4,7 @@ import pickle
 import numpy as np
 import pandas as pd
 from matplotlib import pyplot as plt, rcParams
+from xover import inversion as xinv
 
 from g3m.real_dic import cruises
 
@@ -61,3 +62,39 @@ for ax in axs:
     ax.set_yticks(range(-10, 25, 5))
 fig.tight_layout()
 fig.savefig("figures/fig04_ff_vs_wlsq.pdf")
+
+# %% Statistics for uncertainties section
+xovers_before = xinv.adjust_xovers(fff.xovers_adjusted, -fff.adjustments)
+offsets_final_f = xinv.offsets_weighted(fff.xovers_adjusted, fff.weights)
+offsets_final_g = xinv.offsets_weighted(ffg.xovers_adjusted, ffg.weights)
+offsets_before = xinv.offsets_weighted(xovers_before, fff.weights)
+
+ub = xinv.offset_uncertainties(
+    xovers_before, fff.weights, offsets_before, fff.dof, fff.t_crit
+)
+uf = xinv.offset_uncertainties(
+    fff.xovers_adjusted, fff.weights, offsets_final_f, fff.dof, fff.t_crit
+)
+ug = xinv.offset_uncertainties(
+    ffg.xovers_adjusted, ffg.weights, offsets_final_g, ffg.dof, ffg.t_crit
+)
+
+print("GLODAPv3 real DIC dataset")
+print("=========================")
+print(f"Uncertainty reduction by FF2: {np.mean(100 * ug / ub):.1f} %")
+print(
+    "Uncertainty reduction by FF2: {:.1f} % (allowed only)".format(
+        np.mean(100 * ug[ffg.allowed] / ub[ffg.allowed])
+    )
+)
+print(
+    "Uncertainty reduction by FF2: {:.1f} % (NOT allowed)".format(
+        np.mean(100 * ug[~ffg.allowed] / ub[~ffg.allowed])
+    )
+)
+print(f"Uncertainty reduction by FF1: {np.mean(100 * uf / ub):.1f} %")
+print(
+    "Cruises adjusted in FF2: {:.1f} % of {}".format(
+        100 * ffg.allowed.sum() / len(ffg.allowed), len(ffg.allowed)
+    )
+)
