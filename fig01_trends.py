@@ -1,6 +1,7 @@
 # %%
 import numpy as np
 from matplotlib import pyplot as plt, rcParams
+from scipy.stats import linregress
 from xover import inversion as xinv
 
 import g3m.simulate as sim
@@ -212,3 +213,13 @@ for ax in axs:
     ax.legend(fontsize=7)
 fig.tight_layout()
 fig.savefig("figures/fig01_trends.pdf")
+
+# %% Calculate statistics
+lr_a = linregress(xo.trb.slope, tra_sym.slope)
+print(f"Panel (a) r-square = {lr_a.rvalue**2:.2f}")
+lr_b = linregress(tra_sym.slope, tra_ff2_sym.slope)
+print(f"Panel (b) r-square = {lr_b.rvalue**2:.2f}")
+rmsd_ff1 = np.sqrt(np.mean((tra_sym.slope - xo.trb.slope) ** 2))
+print(f"RMSD FF1 vs assigned trends = {rmsd_ff1:.3f} µmol / (kg * yr)")
+rmsd_ff2 = np.sqrt(np.mean((tra_ff2_sym.slope - xo.trb.slope) ** 2))
+print(f"RMSD FF2 vs assigned trends = {rmsd_ff2:.3f} µmol / (kg * yr)")
