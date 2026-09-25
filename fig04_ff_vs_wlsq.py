@@ -39,7 +39,7 @@ ax.scatter(
     alpha=0.7,
     edgecolor="none",
 )
-ax.set_ylabel("WLSQ adjustment / µmol kg$^{-1}$")
+ax.set_ylabel("WLSQ adjustment / (µmol kg$^{-1}$)")
 ax = axs[1]
 ax.text(0, 1.04, "(b)", transform=ax.transAxes)
 ax.scatter(
@@ -50,12 +50,12 @@ ax.scatter(
     alpha=0.7,
     edgecolor="none",
 )
-ax.set_ylabel("FF$_2$ adjustment / µmol kg$^{-1}$")
+ax.set_ylabel("FF$_2$ adjustment / (µmol kg$^{-1}$)")
 for ax in axs:
     ax.axline((0, 0), slope=1, c="k", lw=0.8)
     ax.grid(alpha=0.2)
     ax.set_aspect(1)
-    ax.set_xlabel("FF$_1$ adjustment / µmol kg$^{-1}$")
+    ax.set_xlabel("FF$_1$ adjustment / (µmol kg$^{-1}$)")
     ax.set_xlim(-10, 20)
     ax.set_ylim(-10, 20)
     ax.set_xticks(range(-10, 25, 5))

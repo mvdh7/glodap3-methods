@@ -145,8 +145,8 @@ ax.scatter(
     c="xkcd:seaweed green",
     marker="+",
 )
-ax.set_xlabel("Apparent trend before / µmol kg$^{-1}$ yr$^{-1}$")
-ax.set_ylabel("Apparent trend after / µmol kg$^{-1}$ yr$^{-1}$")
+ax.set_xlabel("Apparent trend before / (µmol kg$^{-1}$ a$^{-1}$)")
+ax.set_ylabel("Apparent trend after / (µmol kg$^{-1}$ a$^{-1}$)")
 ax = axs[1]
 ax.text(0, 1.03, "(b)", transform=ax.transAxes)
 ax.scatter(
@@ -168,8 +168,8 @@ ax.scatter(
     label="Trend-preserving",
     marker="+",
 )
-ax.set_xlabel("Trend after FF$_1$ / µmol kg$^{-1}$ yr$^{-1}$")
-ax.set_ylabel("Trend after FF$_2$ / µmol kg$^{-1}$ yr$^{-1}$")
+ax.set_xlabel("Trend after FF$_1$ / (µmol kg$^{-1}$ a$^{-1}$)")
+ax.set_ylabel("Trend after FF$_2$ / (µmol kg$^{-1}$ a$^{-1}$)")
 ax = axs[2]
 ax.text(0, 1.03, "(c)", transform=ax.transAxes)
 ax.scatter(
@@ -200,8 +200,8 @@ ax.scatter(
     label="After (tp. FF$_1$)",
     marker="+",
 )
-ax.set_xlabel("True trend / µmol kg$^{-1}$ yr$^{-1}$")
-ax.set_ylabel("Apparent trend / µmol kg$^{-1}$ yr$^{-1}$")
+ax.set_xlabel("True trend / (µmol kg$^{-1}$ a$^{-1}$)")
+ax.set_ylabel("Apparent trend / (µmol kg$^{-1}$ a$^{-1}$)")
 for ax in axs:
     ax.grid(alpha=0.2)
     ax.set_xlim(-0.4, 0.6)

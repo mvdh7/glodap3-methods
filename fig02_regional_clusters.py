@@ -7,7 +7,7 @@ from matplotlib import pyplot as plt, rcParams
 from scipy import stats
 from xover import inversion as xinv
 
-import g3m.simulate as simulate
+from g3m import simulate
 
 
 rcParams["font.size"] = 8
@@ -321,7 +321,7 @@ for c in np.unique(ff.steps.index):
         adjs + xo.offsets_true[c],
         **kwargs,
     )
-ax.set_ylabel("Adjustment + true offset / µmol kg$^{-1}$")
+ax.set_ylabel("Adjustment + true offset / (µmol kg$^{-1}$)")
 ax.set_ylim(-1.5, 1.5)
 ax.set_xlim(0, isplit * 2)
 ax.set_xticks([0, 2000, 4000, 6000, 8000, 10000, 12410, 14949, 17410, 20000])
