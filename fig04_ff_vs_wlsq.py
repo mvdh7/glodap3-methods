@@ -82,6 +82,7 @@ ug = xinv.offset_uncertainties(
 print("GLODAPv3 real DIC dataset")
 print("=========================")
 print(f"Uncertainty reduction by FF2: {np.mean(100 * ug / ub):.1f} %")
+# ruff: disable[UP032]
 print(
     "Uncertainty reduction by FF2: {:.1f} % (allowed only)".format(
         np.mean(100 * ug[ffg.allowed] / ub[ffg.allowed])

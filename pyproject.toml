@@ -9,6 +9,9 @@ dependencies = ["xover>=2.0.0,<3"]
 [tool.ruff]
 line-length = 79
 
+[tool.ruff.lint]
+ignore = ["C408"]
+
 [tool.ruff.lint.isort]
 combine-as-imports = true
 force-single-line = false
