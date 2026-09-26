@@ -114,7 +114,7 @@ for i in range(len(fig_opts)):
     )
     cax.set_xlim(vmin, vmax)
     cax.set_xticks([-12, -6, 0, 6, 12])
-    cax.set_xlabel("Adjustment / µmol kg$^{-1}$")
+    cax.set_xlabel("Adjustment / (µmol kg$^{-1}$)")
     cax.get_yaxis().set_visible(False)
     for p in ["top", "right", "left"]:
         cax.spines[p].set_visible(False)
